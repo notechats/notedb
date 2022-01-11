@@ -11,7 +11,7 @@ class YYetsDataSet(SqliteTable):
         if db_path is None:
             db_path = os.path.abspath(os.path.dirname(__file__)) + '/db/yyets.sqlite'
         super(YYetsDataSet, self).__init__(db_path=db_path, table_name=table_name, *args, **kwargs)
-        self.columns = ['cnname', 'enname', 'aliasname', 'views', 'data']
+        self.columns = ['id', 'cnname', 'enname', 'aliasname', 'views', 'data']
         self.create()
 
     def create(self):
