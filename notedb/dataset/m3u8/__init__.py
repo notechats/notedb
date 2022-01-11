@@ -1,1 +1,1 @@
-from .dataset import DataSet
+from .dataset import M3U8DataSet
