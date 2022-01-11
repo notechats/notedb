@@ -4,13 +4,13 @@ from notedrive.tables import SqliteTable
 from notetool.secret import read_secret
 
 
-class DataSet(SqliteTable):
+class M3U8DataSet(SqliteTable):
     def __init__(self, table_name='m3u8_detail', db_path=None, *args, **kwargs):
         if db_path is None:
-            db_path = read_secret(cate1="local", cate2="path", cate3="m3u8_db", cate4="db_path")
+            db_path = read_secret(cate1="local", cate2="path", cate3="db", cate4="m3u8_db")
         if db_path is None:
             db_path = os.path.abspath(os.path.dirname(__file__)) + '/db/m3u8.db'
-        super(DataSet, self).__init__(db_path=db_path, table_name=table_name, *args, **kwargs)
+        super(M3U8DataSet, self).__init__(db_path=db_path, table_name=table_name, *args, **kwargs)
         self.columns = ['name', 'size', 'dateline', 'source_url', 'm3u8_url', 'ext_json',
                         'cate1', 'cate2', 'cate3', 'cate4', 'cate5']
         self.create()
